@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение • Aiganym</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Элегантные шрифты для стиля бохо-шик -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -30,10 +29,55 @@
             <button class="btn btn-back" onclick="showScreen('question-screen')">Зайти снова</button>
         </div>
 
-        <!-- Экран 3: Приглашение (Бохо минимализм) -->
+        <!-- Экран 3: Приглашение -->
         <div id="invitation-screen" class="screen">
             <div class="badge">You're invited</div>
             <h1 class="gold-title">AIGANYM</h1>
+            <p class="subtitle">Birthday Celebration • 14 Years</p>
+
+            <div class="divider">✦ <span>&mdash;</span> ✦</div>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <span class="label">ДАТА И ВРЕМЯ</span>
+                    <span class="value">26 Сентября • 14:30</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">ЛОКАЦИЯ</span>
+                    <span class="value">Антикафе Usetime</span>
+                    <span class="sub-value">ул. Майлина, 8</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">AFTERPARTY</span>
+                    <span class="value">Ресторан Rase Mokki</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">ДРЕСС-КОД</span>
+                    <span class="dress-code-item"><b>1st part:</b> Casual</span>
+                    <span class="dress-code-item"><b>2nd part:</b> Cocktail dress</span>
+                </div>
+            </div>
+
+            <div class="divider">✦ <span>&mdash;</span> ✦</div>
+
+            <p class="footer-note">Ждём вас с нетерпением!</p>
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => {
+                screen.style.display = 'none';
+                screen.classList.remove('active');
+            });
+            const target = document.getElementById(screenId);
+            target.style.display = 'block';
+            target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
             <p class="subtitle">Birthday Celebration • 14 Years</p>
 
             <div class="divider">✦ <span>&mdash;</span> ✦</div>
