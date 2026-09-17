@@ -3,67 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на День Рождения Айганым!</title>
+    <title>Приглашение • Айганым</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем красивый шрифт с Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Изящные шрифты для стиля бохо: Cormorant Garamond и Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="card">
         <!-- Экран 1: Вопрос при входе -->
         <div id="question-screen" class="screen active">
-            <div class="icon">💌</div>
-            <h1>Привет!</h1>
-            <p>Вы были приглашены на День Рождения?</p>
+            <div class="boho-element">✦</div>
+            <h1>Aiganym's Birthday</h1>
+            <p class="question-text">Были ли вы приглашены?</p>
             <div class="buttons">
-                <button class="btn btn-yes" onclick="showScreen('invitation-screen')">Да! 💕</button>
-                <button class="btn btn-no" onclick="showScreen('sad-screen')">Нет... 💔</button>
+                <button class="btn btn-yes" onclick="showScreen('invitation-screen')">Да</button>
+                <button class="btn btn-no" onclick="showScreen('sad-screen')">Нет</button>
             </div>
         </div>
 
         <!-- Экран 2: Если ответили "Нет" -->
         <div id="sad-screen" class="screen">
-            <div class="icon sad-icon">🥺</div>
-            <h2>Ой...</h2>
-            <p>Очень жаль! Но мы всё равно желаем тебе отличного дня! ✨</p>
-            <button class="btn btn-back" onclick="showScreen('question-screen')">Зайти снова 🔄</button>
+            <div class="boho-element">🕊️</div>
+            <h2>Очень жаль...</h2>
+            <p>Но мы всё равно желаем вам прекрасного дня!</p>
+            <button class="btn btn-back" onclick="showScreen('question-screen')">Зайти снова</button>
         </div>
 
-        <!-- Экран 3: Приглашение (Если ответили "Да") -->
+        <!-- Экран 3: Приглашение (Бохо минимализм) -->
         <div id="invitation-screen" class="screen">
-            <div class="badge">Приглашение 🎈</div>
-            <h1>Айганым исполняется 14! 🎉</h1>
-            <p class="subtitle">Приглашаю тебя разделить этот радостный день со мной!</p>
+            <div class="badge">You're invited</div>
+            <h1 class="gold-title">AIGANAM</h1>
+            <p class="subtitle">Birthday Celebration • 14 Years</p>
+
+            <div class="divider">✦ <span>&mdash;</span> ✦</div>
             
-            <div class="info-box">
+            <div class="info-list">
                 <div class="info-item">
-                    <span class="info-icon">📍</span>
-                    <div>
-                        <strong>Где:</strong>
-                        <p>Антикафе Usetime<br><small>ул. Майлина, 8</small></p>
-                    </div>
+                    <span class="label">ДАТА И ВРЕМЯ</span>
+                    <span class="value">23 Сентября • 14:30</span>
                 </div>
                 <div class="info-item">
-                    <span class="info-icon">👑</span>
-                    <div>
-                        <strong>Дресс-код:</strong>
-                        <p>Что-то розовое или праздничное! ✨</p>
-                    </div>
+                    <span class="label">ЛОКАЦИЯ</span>
+                    <span class="value">Антикафе Usetime</span>
+                    <span class="sub-value">ул. Майлина, 8</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">AFTERPARTY</span>
+                    <span class="value">Ресторан Rase Mokki</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">ДРЕСС-КОД</span>
+                    <span class="value">Casual</span>
                 </div>
             </div>
 
-            <p class="footer-note">Жду тебя с нетерпением! 💖</p>
+            <div class="divider">✦ <span>&mdash;</span> ✦</div>
+
+            <p class="footer-note">Ждём вас с нетерпением!</p>
         </div>
     </div>
 
     <script>
         function showScreen(screenId) {
-            // Скрываем все экраны
             const screens = document.querySelectorAll('.screen');
             screens.forEach(screen => screen.classList.remove('active'));
-            
-            // Показываем нужный экран
             document.getElementById(screenId).classList.add('active');
         }
     </script>
