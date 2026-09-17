@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на День Рождения Айганым!</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем красивый шрифт с Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <!-- Экран 1: Вопрос при входе -->
+        <div id="question-screen" class="screen active">
+            <div class="icon">💌</div>
+            <h1>Привет!</h1>
+            <p>Вы были приглашены на День Рождения?</p>
+            <div class="buttons">
+                <button class="btn btn-yes" onclick="showScreen('invitation-screen')">Да! 💕</button>
+                <button class="btn btn-no" onclick="showScreen('sad-screen')">Нет... 💔</button>
+            </div>
+        </div>
+
+        <!-- Экран 2: Если ответили "Нет" -->
+        <div id="sad-screen" class="screen">
+            <div class="icon sad-icon">🥺</div>
+            <h2>Ой...</h2>
+            <p>Очень жаль! Но мы всё равно желаем тебе отличного дня! ✨</p>
+            <button class="btn btn-back" onclick="showScreen('question-screen')">Зайти снова 🔄</button>
+        </div>
+
+        <!-- Экран 3: Приглашение (Если ответили "Да") -->
+        <div id="invitation-screen" class="screen">
+            <div class="badge">Приглашение 🎈</div>
+            <h1>Айганым исполняется 14! 🎉</h1>
+            <p class="subtitle">Приглашаю тебя разделить этот радостный день со мной!</p>
+            
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Где:</strong>
+                        <p>Антикафе Usetime<br><small>ул. Майлина, 8</small></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">👑</span>
+                    <div>
+                        <strong>Дресс-код:</strong>
+                        <p>Что-то розовое или праздничное! ✨</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-note">Жду тебя с нетерпением! 💖</p>
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenId) {
+            // Скрываем все экраны
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            
+            // Показываем нужный экран
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
