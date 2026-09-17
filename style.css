@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #f7f3ee;
     background-image: radial-gradient(#e8dfd5 1px, transparent 1px);
@@ -12,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     font-family: 'Montserrat', sans-serif;
     color: #5a5047;
 }
@@ -21,9 +26,10 @@ body {
     background: #faf7f2;
     border: 1px solid #e3d7c7;
     border-radius: 16px;
-    padding: 40px 30px;
-    max-width: 420px;
+    padding: 35px 20px;
     width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
     text-align: center;
     box-shadow: 0 10px 30px rgba(180, 160, 140, 0.12);
     position: relative;
@@ -32,100 +38,103 @@ body {
 .card::before {
     content: '';
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
     border: 1px solid #ebdccb;
     border-radius: 12px;
     pointer-events: none;
 }
 
-/* Принудительное скрытие неактивных экранов */
 .screen {
-    display: none !important;
+    display: none;
+    width: 100%;
 }
 
 .screen.active {
-    display: block !important;
-    animation: fadeIn 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
+    from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 .boho-element {
-    font-size: 24px;
+    font-size: 22px;
     color: #c5a059;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     color: #4a4036;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .gold-title {
     color: #b38b46;
-    letter-spacing: 3px;
-    font-size: 36px;
+    letter-spacing: 2px;
+    font-size: 32px;
 }
 
 h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
+    font-size: 26px;
     color: #4a4036;
     margin-bottom: 10px;
 }
 
 p.question-text, p {
-    font-size: 14px;
+    font-size: 13px;
     color: #7a6e63;
     font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 25px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 .subtitle {
-    font-size: 13px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     color: #9e8d7c;
-    margin-top: -5px;
-    margin-bottom: 20px;
+    margin-top: -4px;
+    margin-bottom: 15px;
 }
 
 .badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #b38b46;
     background: #f2e9de;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
+    width: 100%;
 }
 
 .btn {
     border: 1px solid #c5a059;
-    padding: 12px 28px;
+    padding: 10px 24px;
     border-radius: 30px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
@@ -137,18 +146,10 @@ p.question-text, p {
     color: #ffffff;
 }
 
-.btn-yes:hover {
-    background-color: #b38b46;
-}
-
 .btn-no {
     background-color: transparent;
     color: #8c7a6b;
     border-color: #d6c5b3;
-}
-
-.btn-no:hover {
-    background-color: #f2e9de;
 }
 
 .btn-back {
@@ -159,12 +160,13 @@ p.question-text, p {
 
 .divider {
     color: #c5a059;
-    font-size: 12px;
-    margin: 20px 0;
+    font-size: 11px;
+    margin: 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
 }
 
 .divider span {
@@ -174,8 +176,9 @@ p.question-text, p {
 .info-list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin: 20px 0;
+    gap: 14px;
+    margin: 10px 0;
+    width: 100%;
 }
 
 .info-item {
@@ -185,30 +188,30 @@ p.question-text, p {
 }
 
 .label {
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #a89787;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 600;
     color: #4a4036;
 }
 
 .sub-value {
-    font-size: 12px;
+    font-size: 11px;
     color: #8c7a6b;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .dress-code-item {
-    font-size: 14px;
+    font-size: 13px;
     color: #5a5047;
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .dress-code-item b {
@@ -219,90 +222,7 @@ p.question-text, p {
 .footer-note {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 18px;
-    color: #b38b46;
-    margin-bottom: 0;
-}
-    transition: all 0.3s ease;
-}
-
-.btn-yes {
-    background-color: #c5a059;
-    color: #ffffff;
-}
-
-.btn-yes:hover {
-    background-color: #b38b46;
-}
-
-.btn-no {
-    background-color: transparent;
-    color: #8c7a6b;
-    border-color: #d6c5b3;
-}
-
-.btn-no:hover {
-    background-color: #f2e9de;
-}
-
-.btn-back {
-    background-color: transparent;
-    color: #b38b46;
-    border-color: #b38b46;
-}
-
-.divider {
-    color: #c5a059;
-    font-size: 12px;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.divider span {
-    color: #d6c5b3;
-}
-
-.info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin: 20px 0;
-}
-
-.info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #a89787;
-    margin-bottom: 4px;
-}
-
-.value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    font-weight: 600;
-    color: #4a4036;
-}
-
-.sub-value {
-    font-size: 12px;
-    color: #8c7a6b;
-    margin-top: 2px;
-}
-
-.footer-note {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 18px;
+    font-size: 17px;
     color: #b38b46;
     margin-bottom: 0;
 }
